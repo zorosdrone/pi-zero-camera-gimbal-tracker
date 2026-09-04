@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pi Camera KCF ROI Tracking</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <h1>Pi Camera / PC選択 → KCF追跡 → SG90</h1>
+  <p class="notice">映像上で対象をドラッグして選択してください。選択後、追跡対象の中心を画面中央へ移動します。見失った場合は画面内で自動再捕捉します。</p>
+  <div class="stage-layout">
+    <div class="stage">
+      <img class="stream" src="/stream.mjpg" alt="Piカメラ映像">
+      <canvas id="overlay" width="__WIDTH__" height="__HEIGHT__"></canvas>
+    </div>
+    <aside class="target-card">
+      <h2>追跡対象</h2>
+      <div class="target-frame">
+        <img id="targetPreview" alt="追跡対象プレビュー">
+        <div id="targetPlaceholder">カメラ映像上で対象をドラッグしてください</div>
+      </div>
+      <p class="target-help">マウスで選択した瞬間の領域を静止画で表示します。追跡状態と現在位置は左のカメラ映像と状態欄で確認できます。</p>
+    </aside>
+  </div>
+  <section class="panel">
+    <div class="card">
+      <div class="status">
+        トラッカー: <strong id="tracker">--</strong><br>
+        状態: <strong id="tracking">未選択</strong><br>
+        PAN: <strong id="pan">--</strong>° / TILT: <strong id="tilt">--</strong>°<br>
+        追跡FPS: <strong id="fps">--</strong><br>
+        メッセージ: <strong id="message">接続中</strong>
+      </div>
+      <button id="stop">追跡停止</button>
+      <button id="center">サーボ中央</button>
+      <button id="release">PWM解放</button>
+    </div>
+    <div class="card help">
+      <strong>操作方法</strong><br>
+      1. 映像上で対象をマウスドラッグ<br>
+      2. ROI確定後に自動追跡開始<br>
+      3. 見失ったら、まず画面内で自動再捕捉<br>
+      4. 再捕捉できない場合に再度ドラッグ<br><br>
+      枠はブラウザーで描画しています。KCFの追跡・再捕捉とサーボ制御はPi側で実行します。
+      対象を認識しているのではなく、選択した画像領域を追跡します。
+    </div>
+  </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>

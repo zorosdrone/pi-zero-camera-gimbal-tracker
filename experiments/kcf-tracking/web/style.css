@@ -1,0 +1,26 @@
+:root { color-scheme: dark; font-family: system-ui, sans-serif; }
+body { margin: 0; background: #111827; color: #f9fafb; }
+main { width: min(1100px, 100%); margin: auto; padding: 16px; box-sizing: border-box; }
+h1 { font-size: 1.35rem; margin: 0 0 8px; }
+.notice { color: #cbd5e1; line-height: 1.6; }
+.stage-layout { display: grid; grid-template-columns: minmax(0, __WIDTH__px) minmax(220px, 1fr); gap: 14px; align-items: start; }
+.stage { position: relative; width: 100%; max-width: __WIDTH__px; aspect-ratio: __WIDTH__ / __HEIGHT__; background: #000; border: 2px solid #334155; border-radius: 8px; overflow: hidden; }
+.stream { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
+#overlay { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; cursor: crosshair; }
+.target-card { min-width: 0; background: #1f2937; border: 2px solid #334155; border-radius: 8px; padding: 12px; box-sizing: border-box; }
+.target-card h2 { font-size: 1.05rem; margin: 0 0 8px; }
+.target-frame { position: relative; width: 100%; aspect-ratio: 4 / 3; background: #000; border: 2px solid #475569; border-radius: 6px; overflow: hidden; }
+#targetPreview { width: 100%; height: 100%; display: block; object-fit: contain; }
+#targetPlaceholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 12px; box-sizing: border-box; color: #94a3b8; text-align: center; line-height: 1.5; }
+.target-help { margin: 8px 0 0; color: #cbd5e1; line-height: 1.5; font-size: .9rem; }
+.panel { display: grid; grid-template-columns: minmax(260px, 1fr) minmax(240px, 1fr); gap: 14px; margin-top: 14px; }
+.card { background: #1f2937; border-radius: 8px; padding: 14px; }
+.status { line-height: 1.75; }
+.ok { color: #86efac; }
+.warn { color: #fca5a5; }
+button { min-height: 42px; margin: 4px 4px 4px 0; border: 1px solid #64748b; border-radius: 7px; background: #334155; color: white; padding: 6px 12px; font-size: .95rem; cursor: pointer; }
+button:hover { background: #475569; }
+.help { color: #cbd5e1; line-height: 1.7; font-size: .95rem; }
+kbd { background: #0f172a; border: 1px solid #64748b; border-radius: 4px; padding: 2px 6px; }
+@media (max-width: 900px) { .stage-layout { grid-template-columns: 1fr; } .stage { max-width: none; } }
+@media (max-width: 650px) { .panel { grid-template-columns: 1fr; } }
