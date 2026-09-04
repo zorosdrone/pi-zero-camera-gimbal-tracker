@@ -62,18 +62,8 @@ http://raspberrypi.local:8000/
 
 測定条件と結果は[ベンチマーク結果](docs/benchmarks.md)へまとめています。
 
-## 公開対象外
-
-初回版には学習・推論モデル、人物サンプル画像、商品ページ画像、室内メモが写った試写、既存動画を含めません。モデルは利用者自身が正規の配布元から取得・生成する前提です。
-
-新しいデモ動画は後から`media/`またはGitHub Releasesへ追加します。
-
-## 公開準備状態
-
-コードと公開用文書を独立Git履歴として整理し、私有GitHubリポジトリへ反映済みです。公開前に実機・動画・外部素材の最終確認を行います。
-
 ## ライセンス
 
 - `src/`、`experiments/`、`scripts/` の自作コード: [MIT License](LICENSE)
 - 自作の文書、図、写真、およびGitHub Releaseに添付する自作デモ動画: [CC BY 4.0](LICENSE-DOCUMENTATION.md)
-- Picamera2由来の部分、依存パッケージ、外部3Dモデル、公開対象外素材: [NOTICE.md](NOTICE.md) を参照
+- Picamera2由来の部分、依存パッケージ、外部3Dモデル、同梱していない素材: [NOTICE.md](NOTICE.md) を参照
