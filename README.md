@@ -12,7 +12,7 @@ Raspberry Pi Zero 2 W、OV5647カメラ、SG90サーボ2個を使ったパン・
 
 PCブラウザーで対象領域（ROI）を選び、Pi Zero 2 W上のOpenCV KCFで追跡します。YOLOによる自動検出は使わず、追跡中心と映像中心の差からSG90を制御する構成です。
 
-パン・チルト機構には、MakerWorldの[SG90 Servo 2 Axis Gimbal](https://makerworld.com/ja/models/511916-sg90-servo-2-axis-gimbal)を3Dプリントして使用しています。モデルの作者名、ライセンス、利用条件は公開時にMakerWorld掲載ページで再確認してください。
+パン・チルト機構には、MakerWorldの[SG90 Servo 2 Axis Gimbal](https://makerworld.com/ja/models/511916-sg90-servo-2-axis-gimbal)を3Dプリントして使用しています。モデルの作者名、ライセンス、利用条件は公開時にMakerWorld掲載ページで再確認してください。このリポジトリにはモデル本体や派生データを含めず、ライセンスも付与しません。
 
 - [ブラウザーでROIを選ぶデモ動画](https://github.com/zorosdrone/pi-zero-camera-gimbal-tracker/releases/download/v0.1.0-kcf-demo/gimbal-kcf-roi-browser-demo-v0.1.0.mp4)
 - [ジンバルが追従するデモ動画](https://github.com/zorosdrone/pi-zero-camera-gimbal-tracker/releases/download/v0.1.0-kcf-demo/gimbal-kcf-servo-demo-v0.1.0.mp4)
@@ -66,4 +66,10 @@ http://raspberrypi.local:8000/
 
 ## 公開準備状態
 
-コードと公開用文書の初回整理まで完了しています。ライセンス決定、最終監査、独立Git履歴の作成、GitHub公開はまだ行っていません。
+コードと公開用文書を独立Git履歴として整理し、私有GitHubリポジトリへ反映済みです。公開前に実機・動画・外部素材の最終確認を行います。
+
+## ライセンス
+
+- `src/`、`experiments/`、`scripts/` の自作コード: [MIT License](LICENSE)
+- 自作の文書、図、写真、およびGitHub Releaseに添付する自作デモ動画: [CC BY 4.0](LICENSE-DOCUMENTATION.md)
+- Picamera2由来の部分、依存パッケージ、外部3Dモデル、公開対象外素材: [NOTICE.md](NOTICE.md) を参照
