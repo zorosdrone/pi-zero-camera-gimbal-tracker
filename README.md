@@ -14,11 +14,15 @@ PCブラウザーで対象領域（ROI）を選び、Pi Zero 2 W上のOpenCV KCF
 
 パン・チルト機構には、MakerWorldの[SG90 Servo 2 Axis Gimbal](https://makerworld.com/ja/models/511916-sg90-servo-2-axis-gimbal)を3Dプリントして使用しています。モデルの作者名、ライセンス、利用条件は公開時にMakerWorld掲載ページで再確認してください。このリポジトリにはモデル本体や派生データを含めず、ライセンスも付与しません。
 
-- [ブラウザーでROIを選ぶデモ動画](https://github.com/zorosdrone/pi-zero-camera-gimbal-tracker/releases/download/v0.1.0-kcf-demo/gimbal-kcf-roi-browser-demo-v0.1.0.mp4)
-- [ジンバルが追従するデモ動画](https://github.com/zorosdrone/pi-zero-camera-gimbal-tracker/releases/download/v0.1.0-kcf-demo/gimbal-kcf-servo-demo-v0.1.0.mp4)
-- [Release v0.1.0-kcf-demo](https://github.com/zorosdrone/pi-zero-camera-gimbal-tracker/releases/tag/v0.1.0-kcf-demo)
+### ブラウザーでROIを選ぶデモ
 
-動画はGit履歴へ含めず、GitHub Releaseの添付ファイルとして配布します。公開前は上のリンクが未作成です。
+[![ブラウザーでROIを選ぶデモをYouTubeで再生](https://img.youtube.com/vi/6AgrW0ljx98/hqdefault.jpg)](https://www.youtube.com/watch?v=6AgrW0ljx98)
+
+### ジンバルが追従するデモ
+
+[![ジンバルが追従するデモをYouTubeで再生](https://img.youtube.com/vi/jf3r5UFmqSM/hqdefault.jpg)](https://www.youtube.com/watch?v=jf3r5UFmqSM)
+
+サムネイルをクリックするとYouTubeで再生します。動画はGit履歴へ含めず、原動画は[Release v0.1.0-kcf-demo](https://github.com/zorosdrone/pi-zero-camera-gimbal-tracker/releases/tag/v0.1.0-kcf-demo)の添付ファイルとしても配布します。
 
 ## 現在の状態
 
