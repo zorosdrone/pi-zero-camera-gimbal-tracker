@@ -1,126 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="980" viewBox="0 0 1500 980" role="img" aria-labelledby="title desc">
-  <title id="title">Raspberry Pi Zero 2 WとSG90 2個の配線図</title>
-  <desc id="desc">外部5V電源のプラスを2個のSG90へ、外部GNDを2個のSG90とPiの物理ピン34へ共通接続し、GPIO12とGPIO13を信号線として接続する図。</desc>
-  <defs>
-    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#d62828"/>
-    </marker>
-    <marker id="arrow-black" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#222222"/>
-    </marker>
-    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#1769aa"/>
-    </marker>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.18"/>
-    </filter>
-    <style>
-      .title { font: 700 30px "Yu Gothic", "Meiryo", sans-serif; fill: #17212b; }
-      .subtitle { font: 400 17px "Yu Gothic", "Meiryo", sans-serif; fill: #4b5563; }
-      .box-title { font: 700 23px "Yu Gothic", "Meiryo", sans-serif; fill: #17212b; }
-      .label { font: 600 18px "Yu Gothic", "Meiryo", sans-serif; fill: #17212b; }
-      .small { font: 400 15px "Yu Gothic", "Meiryo", sans-serif; fill: #374151; }
-      .pin { font: 700 16px "Consolas", "Yu Gothic", monospace; fill: #17212b; }
-      .white { fill: #ffffff; }
-    </style>
-  </defs>
-
-  <rect width="1500" height="980" fill="#f7f9fc"/>
-  <text x="60" y="58" class="title">SG90 2軸ジンバル 配線イラスト</text>
-  <text x="60" y="90" class="subtitle">外部5Vでサーボを給電し、GNDだけをRaspberry Piと共通にする</text>
-
-  <!-- Raspberry Pi -->
-  <g filter="url(#shadow)">
-    <rect x="55" y="155" width="410" height="610" rx="22" fill="#2b9348" stroke="#176b35" stroke-width="4"/>
-    <rect x="88" y="198" width="205" height="115" rx="8" fill="#196f3d" opacity="0.8"/>
-    <text x="190" y="242" text-anchor="middle" class="white" font-family="Yu Gothic, Meiryo, sans-serif" font-size="22" font-weight="700">Raspberry Pi</text>
-    <text x="190" y="274" text-anchor="middle" class="white" font-family="Yu Gothic, Meiryo, sans-serif" font-size="20">Zero 2 W</text>
-    <text x="90" y="350" class="white" font-family="Yu Gothic, Meiryo, sans-serif" font-size="16">USB電源（サーボ電源とは別）</text>
-    <rect x="335" y="220" width="76" height="420" rx="8" fill="#d9d9d9" stroke="#777" stroke-width="2"/>
-    <text x="373" y="187" text-anchor="middle" class="white" font-family="Yu Gothic, Meiryo, sans-serif" font-size="16" font-weight="700">40ピン</text>
-    <!-- pin blocks -->
-    <rect x="325" y="335" width="96" height="55" rx="6" fill="#e8f3ff" stroke="#1769aa" stroke-width="3"/>
-    <rect x="325" y="410" width="96" height="55" rx="6" fill="#e8f3ff" stroke="#1769aa" stroke-width="3"/>
-    <rect x="325" y="485" width="96" height="55" rx="6" fill="#eeeeee" stroke="#222" stroke-width="3"/>
-    <text x="373" y="357" text-anchor="middle" class="pin">32</text>
-    <text x="373" y="378" text-anchor="middle" class="small">GPIO12</text>
-    <text x="373" y="432" text-anchor="middle" class="pin">33</text>
-    <text x="373" y="453" text-anchor="middle" class="small">GPIO13</text>
-    <text x="373" y="507" text-anchor="middle" class="pin">34</text>
-    <text x="373" y="528" text-anchor="middle" class="small">GND</text>
-    <text x="90" y="705" class="white" font-family="Yu Gothic, Meiryo, sans-serif" font-size="18" font-weight="700">Pi側は信号とGNDだけ接続</text>
-  </g>
-
-  <!-- external power -->
-  <g filter="url(#shadow)">
-    <rect x="570" y="175" width="300" height="255" rx="18" fill="#fff4d6" stroke="#d49a00" stroke-width="4"/>
-    <text x="720" y="220" text-anchor="middle" class="box-title">外部5V電源</text>
-    <text x="720" y="250" text-anchor="middle" class="small">SG90 2個用（Piとは別）</text>
-    <circle cx="625" cy="320" r="22" fill="#d62828"/>
-    <text x="625" y="327" text-anchor="middle" class="white" font-family="Arial" font-size="24" font-weight="700">＋</text>
-    <text x="665" y="327" class="label">＋5V</text>
-    <circle cx="625" cy="380" r="22" fill="#222222"/>
-    <text x="625" y="387" text-anchor="middle" class="white" font-family="Arial" font-size="24" font-weight="700">−</text>
-    <text x="665" y="387" class="label">GND</text>
-  </g>
-
-  <!-- servos -->
-  <g filter="url(#shadow)">
-    <rect x="1080" y="145" width="340" height="245" rx="18" fill="#e6f4ea" stroke="#2b9348" stroke-width="4"/>
-    <text x="1250" y="190" text-anchor="middle" class="box-title">PAN SG90</text>
-    <text x="1250" y="218" text-anchor="middle" class="small">左右回転軸</text>
-    <rect x="1115" y="250" width="105" height="42" rx="8" fill="#ffe1e1" stroke="#d62828" stroke-width="2"/>
-    <rect x="1115" y="305" width="105" height="42" rx="8" fill="#eeeeee" stroke="#222" stroke-width="2"/>
-    <rect x="1115" y="360" width="105" height="42" rx="8" fill="#e8f3ff" stroke="#1769aa" stroke-width="2"/>
-    <text x="1167" y="278" text-anchor="middle" class="label">赤線</text>
-    <text x="1167" y="333" text-anchor="middle" class="label">茶／黒線</text>
-    <text x="1167" y="388" text-anchor="middle" class="label">橙／黄線</text>
-    <text x="1285" y="278" class="small">＋5V</text>
-    <text x="1285" y="333" class="small">GND</text>
-    <text x="1285" y="388" class="small">信号</text>
-  </g>
-
-  <g filter="url(#shadow)">
-    <rect x="1080" y="500" width="340" height="245" rx="18" fill="#e6f4ea" stroke="#2b9348" stroke-width="4"/>
-    <text x="1250" y="545" text-anchor="middle" class="box-title">TILT SG90</text>
-    <text x="1250" y="573" text-anchor="middle" class="small">上下回転軸</text>
-    <rect x="1115" y="605" width="105" height="42" rx="8" fill="#ffe1e1" stroke="#d62828" stroke-width="2"/>
-    <rect x="1115" y="660" width="105" height="42" rx="8" fill="#eeeeee" stroke="#222" stroke-width="2"/>
-    <rect x="1115" y="715" width="105" height="42" rx="8" fill="#e8f3ff" stroke="#1769aa" stroke-width="2"/>
-    <text x="1167" y="633" text-anchor="middle" class="label">赤線</text>
-    <text x="1167" y="688" text-anchor="middle" class="label">茶／黒線</text>
-    <text x="1167" y="743" text-anchor="middle" class="label">橙／黄線</text>
-    <text x="1285" y="633" class="small">＋5V</text>
-    <text x="1285" y="688" class="small">GND</text>
-    <text x="1285" y="743" class="small">信号</text>
-  </g>
-
-  <!-- power wires -->
-  <path d="M647 320 H965 V271 H1115" fill="none" stroke="#d62828" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
-  <path d="M965 271 V626 H1115" fill="none" stroke="#d62828" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
-  <text x="895" y="255" class="label" fill="#d62828">＋5V（赤）</text>
-
-  <!-- ground wires -->
-  <path d="M647 380 H930 V326 H1115" fill="none" stroke="#222222" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
-  <path d="M930 326 V681 H1115" fill="none" stroke="#222222" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
-  <path d="M421 512 H520 V380 H647" fill="none" stroke="#222222" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-black)"/>
-  <circle cx="930" cy="380" r="14" fill="#222222" stroke="#ffffff" stroke-width="4"/>
-  <text x="740" y="470" class="label" fill="#222222">ここを必ず共通接続</text>
-  <text x="740" y="497" class="small">外部GND ＝ SG90 GND ＝ Pi物理ピン34</text>
-
-  <!-- signal wires -->
-  <path d="M421 362 H760 V388 H1115" fill="none" stroke="#1769aa" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
-  <path d="M421 437 H820 V743 H1115" fill="none" stroke="#1769aa" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
-  <text x="545" y="345" class="label" fill="#1769aa">GPIO12／物理ピン32</text>
-  <text x="835" y="728" class="label" fill="#1769aa">GPIO13／物理ピン33</text>
-
-  <!-- legend and cautions -->
-  <rect x="55" y="810" width="1365" height="115" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-  <line x1="90" y1="850" x2="170" y2="850" stroke="#d62828" stroke-width="8"/>
-  <text x="185" y="857" class="label">赤: ＋5V</text>
-  <line x1="360" y1="850" x2="440" y2="850" stroke="#222222" stroke-width="8"/>
-  <text x="455" y="857" class="label">黒: GND</text>
-  <line x1="610" y1="850" x2="690" y2="850" stroke="#1769aa" stroke-width="7"/>
-  <text x="705" y="857" class="label">青: PWM信号</text>
-  <text x="90" y="897" class="label" fill="#b42318">注意: SG90の赤線をPiの3.3V、GPIO、物理ピン2/4へ接続しない。PiはUSBから別給電する。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="840" viewBox="0 0 1400 840" role="img" aria-labelledby="title desc">
+<title id="title">SG90 2軸ジンバル 配線対応図</title>
+<desc id="desc">PANはBCM GPIO12・物理32番、TILTはBCM GPIO13・物理33番。サーボは外部5Vで給電。外部電源GND、両サーボGND、Pi物理34番を共通接続する。</desc>
+<style>text{font-family:"Yu Gothic",Meiryo,sans-serif;fill:#19344b;font-size:22px}.title{font-size:34px;font-weight:700}.head{font-size:26px;font-weight:700}.small{font-size:18px}.wire{fill:none;stroke-width:5;stroke-linecap:round}</style>
+<rect width="1400" height="840" rx="24" fill="#f4f7fa"/>
+<text x="50" y="60" class="title">SG90 2軸ジンバル ─ 配線対応図</text>
+<text x="50" y="103">サーボは外部5Vで給電 ／ Piとは信号線とGNDを接続</text>
+<rect x="40" y="130" width="1320" height="75" rx="14" fill="#19344b"/>
+<text x="65" y="162" style="fill:white">接続先の対応図です。端子の位置・並び順は実物と異なります。</text>
+<text x="65" y="191" class="small" style="fill:white">GPIOはBCM番号。「物理○番」と区別し、基板の向き・1番ピンを確認してください。</text>
+<rect x="40" y="225" width="645" height="265" rx="18" fill="white" stroke="#d2dee7"/>
+<rect x="715" y="225" width="645" height="265" rx="18" fill="white" stroke="#d2dee7"/>
+<text x="65" y="269" class="head">PAN SG90 ／ 左右回転</text>
+<text x="740" y="269" class="head">TILT SG90 ／ 上下回転</text>
+<text x="65" y="309" class="small">サーボ側</text><text x="340" y="309" class="small">接続先</text>
+<text x="740" y="309" class="small">サーボ側</text><text x="1015" y="309" class="small">接続先</text>
+<text x="65" y="351">赤：電源＋</text><text x="340" y="351">外部電源 ＋5V</text>
+<text x="65" y="402">茶／黒：GND</text><text x="340" y="402">共通GND（下図）</text>
+<text x="65" y="453">橙／黄：信号</text><text x="340" y="445">Pi GPIO12</text><text x="340" y="472" class="small">物理32番</text>
+<text x="740" y="351">赤：電源＋</text><text x="1015" y="351">外部電源 ＋5V</text>
+<text x="740" y="402">茶／黒：GND</text><text x="1015" y="402">共通GND（下図）</text>
+<text x="740" y="453">橙／黄：信号</text><text x="1015" y="445">Pi GPIO13</text><text x="1015" y="472" class="small">物理33番</text>
+<path d="M245 344H318 M920 344H993" class="wire" stroke="#d35a46"/>
+<path d="M245 395H318 M920 395H993" class="wire" stroke="#374957"/>
+<path d="M245 446H318 M920 446H993" class="wire" stroke="#168e98"/>
+<rect x="40" y="510" width="1320" height="180" rx="18" fill="white" stroke="#d2dee7"/>
+<text x="65" y="550" class="head">共通GND：次の4点を電気的につなぐ</text>
+<path d="M195 596V637H1200V596 M530 596V637 M860 596V637" class="wire" stroke="#374957"/>
+<circle cx="530" cy="637" r="7" fill="#374957"/><circle cx="860" cy="637" r="7" fill="#374957"/>
+<g text-anchor="middle"><text x="195" y="586">外部電源 −（GND）</text><text x="530" y="586">PAN GND</text><text x="860" y="586">TILT GND</text><text x="1200" y="586">Pi 物理34番（GND）</text></g>
+<text x="65" y="674" class="small">PiはUSBから別給電。外部＋5Vはサーボ2個へ分岐し、Piの5V端子へは接続しません。</text>
+<rect x="40" y="710" width="1320" height="105" rx="16" fill="#fff0df"/>
+<text x="65" y="743" style="font-weight:700">通電前の確認</text>
+<text x="65" y="773" class="small">• サーボの赤線をPiのGPIO・3.3V・5V（物理2/4番）へ接続しない。本構成は外部5V給電です。</text>
+<text x="65" y="800" class="small">• 配線色は代表例。現物の仕様で極性を確認し、電源を切って配線。初回は狭い角度で動作確認。</text>
 </svg>

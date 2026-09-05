@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1120" viewBox="0 0 1500 1120" role="img" aria-labelledby="title desc">
+<title id="title">Pi Zero 2 W カメラジンバル 全体配線図</title>
+<desc id="desc">PCはWi-Fi経由でPiに接続。OV5647はPiのCSI端子へ接続。PiはPWR IN USBから給電。GPIO12物理32番をPAN信号、GPIO13物理33番をTILT信号に接続。外部5Vを両サーボ電源へ分岐し、外部電源GNDと両サーボGNDとPi物理34番を共通化する。</desc>
+<defs><style>
+text{font-family:"Yu Gothic",Meiryo,sans-serif;fill:#19344b;font-size:21px}.title{font-size:34px;font-weight:700}.head{font-size:25px;font-weight:700}.small{font-size:17px}.wire{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.box{fill:white;stroke:#cbd9e4;stroke-width:2}
+</style></defs>
+<rect width="1500" height="1120" fill="#f4f7fa"/>
+<text x="50" y="57" class="title">カメラジンバル ─ 全体配線図</text>
+<text x="50" y="96">OV5647 + Raspberry Pi Zero 2 W + SG90 × 2 ／ PCブラウザーから操作</text>
+
+<!-- Network is a logical, not a GPIO or USB, connection. -->
+<rect x="65" y="135" width="430" height="90" rx="16" class="box"/>
+<text x="90" y="172" class="head">PCブラウザー</text><text x="90" y="205" class="small">ROI選択・映像確認・手動操作</text>
+<path d="M280 225V300" class="wire" stroke="#8b6eb2" stroke-dasharray="8 8"/>
+<text x="305" y="258" class="small">同一LAN / Wi-Fi</text><text x="305" y="283" class="small">映像・操作の双方向通信</text>
+
+<!-- Pi ports are functional blocks, deliberately not a fake physical header. -->
+<rect x="65" y="300" width="460" height="390" rx="20" class="box"/>
+<text x="90" y="340" class="head">Raspberry Pi Zero 2 W</text>
+<text x="90" y="375" class="small">端子は説明用の配置（実物の並びではない）</text>
+<text x="320" y="416">CSI端子</text>
+<text x="245" y="476">GPIO12 / 物理32番</text>
+<text x="245" y="536">GPIO13 / 物理33番</text>
+<text x="265" y="596">GND / 物理34番</text>
+<text x="90" y="662">PWR IN（電源用USB）</text>
+
+<!-- Camera and ribbon cable. -->
+<rect x="940" y="135" width="360" height="135" rx="18" class="box"/>
+<circle cx="990" cy="187" r="23" fill="#18334b"/><circle cx="990" cy="187" r="11" fill="#538ba4"/>
+<text x="1030" y="188" class="head">OV5647</text><text x="965" y="233">カメラ（ジンバル上に固定）</text>
+<path d="M525 410H770V245H940" class="wire" stroke="#3f7ba7"/>
+<text x="565" y="328" class="small">Pi Zero対応</text><text x="565" y="354" class="small">CSIリボンケーブル</text><text x="565" y="381" class="small">映像・カメラ給電</text>
+
+<!-- Servo signal terminals on left; supply terminals on right. -->
+<rect x="940" y="365" width="360" height="155" rx="18" fill="#fff3e5" stroke="#dc9d63"/>
+<text x="960" y="402" class="head">PAN SG90（左右）</text>
+<text x="960" y="476">信号</text><text x="1140" y="437">赤：＋5V</text><text x="1110" y="501">茶／黒：GND</text>
+<rect x="940" y="560" width="360" height="155" rx="18" fill="#fff3e5" stroke="#dc9d63"/>
+<text x="960" y="597" class="head">TILT SG90（上下）</text>
+<text x="960" y="671">信号</text><text x="1140" y="632">赤：＋5V</text><text x="1110" y="696">茶／黒：GND</text>
+<path d="M525 470H940 M525 530H840V665H940" class="wire" stroke="#168e98"/>
+<text x="605" y="457" class="small">PWM / 橙・黄線</text><text x="565" y="555" class="small">PWM / 橙・黄線</text>
+
+<!-- Independent Pi supply. -->
+<rect x="65" y="790" width="370" height="125" rx="18" class="box"/>
+<text x="90" y="835" class="head">Pi用USB電源</text><text x="90" y="875" class="small">Pi・カメラを給電</text>
+<path d="M175 790V690" class="wire" stroke="#3f7ba7"/>
+<text x="200" y="745" class="small">USB電源ケーブル</text>
+
+<!-- Common ground bus. -->
+<rect x="665" y="850" width="355" height="95" rx="18" class="box"/>
+<text x="690" y="885" class="head">サーボ用 外部5V電源</text>
+<text x="690" y="919" class="small">2個の駆動に十分な電流容量</text>
+<path d="M525 590H575V790H1335V495H1300 M1300 690H1335 M775 850V790" class="wire" stroke="#374957"/>
+<circle cx="1335" cy="690" r="7" fill="#374957"/><circle cx="775" cy="790" r="7" fill="#374957"/>
+<text x="810" y="777">共通GND（電源 −）</text>
+<!-- Positive supply crosses ground only once: white bridge means no connection. -->
+<path d="M1020 900H1410V430H1300" class="wire" stroke="#d35a46"/>
+<path d="M1300 625H1410" fill="none" stroke="#f4f7fa" stroke-width="15"/>
+<path d="M1300 625H1410" class="wire" stroke="#d35a46"/>
+<circle cx="1410" cy="625" r="7" fill="#d35a46"/>
+<text x="1150" y="881" style="fill:#b34937">＋5V（サーボのみ）</text>
+
+<rect x="40" y="970" width="1420" height="125" rx="16" fill="#e6edf3"/>
+<text x="65" y="1003" class="small">●は電気的な接続点。白い切れ目のある交差は非接続。GPIOはBCM番号、端子位置は模式表示です。</text>
+<text x="65" y="1033" class="small">外部＋5VをPiのGPIO・3.3V・5V端子へ接続しない。配線色は代表例なので現物の仕様で確認してください。</text>
+<text x="65" y="1063" class="small">電源を切って配線・CSIケーブルを着脱。ケーブルの向きと可動部への巻き込みを確認し、初回は狭い角度で試験。</text>
+</svg>
